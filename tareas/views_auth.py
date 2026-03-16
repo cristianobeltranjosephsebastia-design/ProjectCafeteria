@@ -20,7 +20,7 @@ class RegistroApiView(APIView):
         rol = request.data.get('rol', 'Cliente') # Toma el rol del JSON
 
         try:
-            # 1. Creamos el usuario en Firebase Authentication
+            # creacion del usuario en firebase auth
             user = auth.create_user(email=email, password=password)
             uid = user.uid
 
