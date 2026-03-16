@@ -101,6 +101,9 @@ class PedidoApiView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, id=None):
+        """
+        Funcion para eliminar un pedido
+        """
         if not id:
             return Response({"Error": "ID requerido"}, status=status.HTTP_400_BAD_REQUEST)
 
