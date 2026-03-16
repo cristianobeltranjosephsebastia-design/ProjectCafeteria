@@ -1,0 +1,26 @@
+# --- Seguridad ---
+.env
+serviceAccountKey.json
+
+
+# --- Entorno Virtual ---
+venv/
+env/
+ENV/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Django ---
+db.sqlite3
+/static/
+/media/
+# Opcional: Ignora las migraciones si quieres que cada uno las genere (aunque en equipo se suelen subir)
+# tareas/migrations/
+
+# --- Otros ---
+.vscode/
+test.http
+avatar.jpeg
