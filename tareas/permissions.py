@@ -14,7 +14,7 @@ class EsCajeroOAdmin(permissions.BasePermission):
 
 class EsDueñoDelPedido(permissions.BasePermission):
     """
-    Permiso para que un Cliente solo vea sus propios pedidos.
+    Permiso para que un Cliente solo vea sus pedidos 
     """
     def has_object_permission(self, request, obj, view):
         # Comparamos el UID del usuario con el del pedido
