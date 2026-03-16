@@ -4,7 +4,7 @@ from firebase_admin import auth
 import firebase_admin
 from Cafeteria.firebase_config import initialize_firebase
 
-# Inicializamos la base de datos para consultar el perfil
+# Base de datos
 db = initialize_firebase()
 
 class FirebaseAuthentication(BaseAuthentication):
