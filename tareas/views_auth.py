@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from firebase_admin import auth, firestore
 from Cafeteria.firebase_config import firestore
-
+# Inicializamos la base de datos para consultar el perfil
 db = firestore.client()
 load_dotenv()
 
@@ -20,7 +20,7 @@ class RegistroApiView(APIView):
         rol = request.data.get('rol', 'Cliente') 
 
         try:
-            # 1. Creamos el usuario en Firebase Authentication.
+            # creacion del usuario en firebase auth
             user = auth.create_user(email=email, password=password)
             uid = user.uid
 

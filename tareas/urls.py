@@ -4,6 +4,8 @@ from .views_auth import RegistroApiView, LoginApiView
 from .views_perfil import PerfilImagenApiView
 
 urlpatterns = [
+    #pedidos
+    #url
     path('pedidos/', PedidoApiView.as_view(), name='pedidos'),
     path('pedidos/<str:id>/', PedidoApiView.as_view(), name='update'),
     path('pedidos/<str:id>/', PedidoApiView.as_view(), name='delete'),
