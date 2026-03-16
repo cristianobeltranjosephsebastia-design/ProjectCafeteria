@@ -4,7 +4,7 @@ from firebase_admin import auth
 import firebase_admin
 from Cafeteria.firebase_config import initialize_firebase
 
-# Base de datos
+# Base de datos de Firestore para acceder a la colección 'perfiles' y obtener el rol del usuario.
 db = initialize_firebase()
 
 class FirebaseAuthentication(BaseAuthentication):

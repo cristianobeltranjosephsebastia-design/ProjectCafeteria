@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from firebase_admin import auth, firestore
 from Cafeteria.firebase_config import firestore
-
+# Inicializamos la base de datos para consultar el perfil
 db = firestore.client()
 load_dotenv()
 
