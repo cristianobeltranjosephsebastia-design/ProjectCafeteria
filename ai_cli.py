@@ -42,6 +42,7 @@ def consultar_mis_pedidos():
         return response.json()
     except Exception as e:
         return {"error": str(e)}
+    
 
 def eliminar_pedido(id_pedido: str):
     """
@@ -53,6 +54,7 @@ def eliminar_pedido(id_pedido: str):
     print(f"\n[SISTEMA]: Intentando eliminar el pedido ID: {id_limpio}...")
     url = f"http://127.0.0.1:8000/api/pedidos/{id_limpio}/" 
     headers = {"Authorization": f"Bearer {token}"}
+    # Se agrega manejo de errores específico para el caso de cuota agotada (429) y se implementa una espera antes de reintentar automáticamente, además de un manejo general de excepciones para otros posibles errores.
     
     try:
         response = requests.delete(url, headers=headers)
