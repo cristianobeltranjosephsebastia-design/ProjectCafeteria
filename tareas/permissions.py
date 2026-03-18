@@ -19,3 +19,4 @@ class EsDueñoDelPedido(permissions.BasePermission):
     def has_object_permission(self, request, obj, view):
         # Comparamos el UID del usuario con el del pedido
         return obj.get('usuario_id') == request.user.uid
+    #Acceso a los pedidos solo si el usuario es el dueño del pedido, comparando el UID del usuario con el UID asociado al pedido.

@@ -136,3 +136,5 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False
 }
+
+# Arreglos en el archivo de configuración, como la adición de drf_spectacular para la documentación de la API y ajustes en las clases de autenticación y permisos.

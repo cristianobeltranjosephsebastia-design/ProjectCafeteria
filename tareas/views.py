@@ -61,7 +61,7 @@ class PedidoApiView(APIView):
             datos_validados['estado'] = 'pendiente' 
 
             try:
-
+                # try mal indentado, arreglo de indentación para asegurar que la creación del pedido se realice correctamente y se manejen los errores adecuadamente.
                 nuevo_doc = db.collection('pedidos').add(datos_validados)
                 return Response(
                     {"mensaje": "Pedido creado correctamente ✅", "id": nuevo_doc[1].id},
@@ -122,6 +122,7 @@ class PedidoApiView(APIView):
                     {"error": "No tienes permiso para eliminar este pedido"},
                     status=status.HTTP_403_FORBIDDEN
                 )
+                # if para verificar que solo el Administrador o el dueño del pedido puedan eliminarlo, comparando el rol del usuario y el UID asociado al pedido.
 
             doc_ref.delete()
             return Response({"mensaje": "Pedido eliminado correctamente ✅"}, status=status.HTTP_200_OK)

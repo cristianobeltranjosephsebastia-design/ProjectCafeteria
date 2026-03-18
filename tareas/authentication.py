@@ -51,3 +51,4 @@ class FirebaseAuthentication(BaseAuthentication):
         except Exception as e:
             
             raise AuthenticationFailed(f"Token no es válido o está expirado: {str(e)}")
+        # Arreglo de errores en authenticacion, como token inválido o expirado.
