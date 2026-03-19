@@ -17,7 +17,7 @@ class RegistroApiView(APIView):
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
-        rol = request.data.get('rol', 'Cliente') # Toma el rol del JSON
+        rol = request.data.get('rol', 'Cliente') 
 
         try:
             # creacion del usuario en firebase auth

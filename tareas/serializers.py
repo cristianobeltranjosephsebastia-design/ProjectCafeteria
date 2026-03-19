@@ -19,7 +19,7 @@ class PedidoSerializer(serializers.Serializer):
 
     def validate_cantidad(self, value):
         """
-        Validación para evitar pedidos con cantidades negativas o en cero
+        Validación para evitar pedidos con cantidades negativas o en cero.
         """
         if value <= 0:
             raise serializers.ValidationError("La cantidad debe ser mayor a cero")
