@@ -1,0 +1,69 @@
+### 1. DEFINICIÓN DE VARIABLES
+@hostname = http://127.0.0.1:8000
+@token = TU_TOKEN_AQUI 
+
+############################################################
+
+### Registro de usuario 
+POST {{hostname}}/api/auth/registro/
+Content-Type: application/json
+
+{
+    "email": "usuario@ejemplo.com",
+    "password": "PasswordSegura123",
+    "rol": "Cliente" 
+}
+
+### Iniciar sesión
+# @name login
+POST {{hostname}}/api/auth/login/
+Content-Type: application/json
+
+{
+    "email": "usuario@ejemplo.com",
+    "password": "PasswordSegura123"
+}
+
+### Listar Pedidos (GET)
+GET {{hostname}}/api/pedidos/?limit=5
+Authorization: Bearer {{token}}
+
+### Crear un nuevo Pedido (POST)
+POST {{hostname}}/api/pedidos/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "producto": "Café Americano",
+    "cantidad": 2,
+    "precio_total": 5000,
+    "notas": "Sin azúcar",
+    "estado": "pendiente"
+}
+
+### Actualizar un Pedido (PUT)
+PUT {{hostname}}/api/pedidos/ID_DEL_PEDIDO_AQUI/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "producto": "Café Americano",
+    "cantidad": 2,
+    "estado": "preparando"
+}
+
+### Eliminar un Pedido (DELETE)
+DELETE {{hostname}}/api/pedidos/ID_DEL_PEDIDO_AQUI/
+Authorization: Bearer {{token}}
+
+### Subir foto de perfil
+POST {{hostname}}/api/perfil/foto/
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=MiBoundary 
+
+--MiBoundary
+Content-Disposition: form-data; name="imagen"; filename="avatar.jpeg"
+Content-Type: image/jpeg
+
+< ./assets/avatar.jpeg
+--MiBoundary--
