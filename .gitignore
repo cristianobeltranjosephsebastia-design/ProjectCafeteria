@@ -17,8 +17,7 @@ __pycache__/
 db.sqlite3
 /static/
 /media/
-# Opcional: Ignora las migraciones si quieres que cada uno las genere (aunque en equipo se suelen subir)
-# tareas/migrations/
+
 
 # --- Otros ---
 .vscode/
