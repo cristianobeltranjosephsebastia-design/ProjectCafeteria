@@ -154,8 +154,8 @@ POST /api/pedidos/
 
 ## Nombres y cuentas
 
-* Cristian Beltrán  
-* Joseph Sebastián   
+* Jhostyn Nicolas Cristiano Beltran 
+* Joseph Sebastián Cristiano Beltran   
 * Juan Daza Alcazar
 
 ## Email
