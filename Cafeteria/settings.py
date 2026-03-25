@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 # apps
 INSTALLED_APPS = [
+    'daphne',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Cafeteria.wsgi.application'
+ASGI_APPLICATION = 'Cafeteria.asgi.application'
 
 
 # Database
