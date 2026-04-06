@@ -129,3 +129,57 @@ class PedidoApiView(APIView):
 
         except Exception as e:
             return Response({"Error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+        
+        
+class EstadisticasApiView(APIView):
+    authentication_classes = [FirebaseAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+                
+        """
+        Calcular el resumen de los pedidos para mostrar en el frontend
+        """
+        rol = request.user.rol
+        uid = request.user.uid
+        
+        #1. Filtrar los pedidos
+        if rol == 'Administrador':
+            docs = db.collection('pedidos').stream()
+        else:
+            docs = db.collection('pedidos').where('usuario_id', '==', uid).stream()
+            
+        #2. Inicializar las variables para el resumen
+        total = 0
+        pendientes = 0
+        completados = 0
+        en_proceso = 0
+        
+        #.3 Procesar los datos
+        
+        for doc in docs:
+                total += 1
+                data = doc.to_dict()
+                estado = data.get('estado', 'pendiente').lower()
+                
+                if 'completado' in estado or 'terminada' in estado:
+                    completados += 1
+                elif 'proceso' in estado:
+                    en_proceso += 1
+                else:
+                    pendientes += 1
+                
+        #4. Calcular el porcentaje
+        if total > 0:
+            porcentaje = int((completados / total) * 100)
+        else:
+            porcentaje = 0
+            
+        return Response({
+            "total": total,
+            "pendientes": pendientes,
+            "en_proceso": en_proceso,
+            "completados": completados,
+            "porcentaje_completados": porcentaje
+            }, status=status.HTTP_200_OK)

@@ -7,7 +7,7 @@ from Cafeteria.firebase_config import initialize_firebase
 
 db = initialize_firebase()
 
-class ChatHistorialAPIView():
+class ChatHistorialAPIView(APIView):
     authentication_classes = [FirebaseAuthentication]
     permission_classes = [IsAuthenticated]
     
