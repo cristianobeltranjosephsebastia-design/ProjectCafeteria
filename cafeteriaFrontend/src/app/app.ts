@@ -5,10 +5,11 @@ import { RouterOutlet } from '@angular/router';
 
 import { DashboardComponent } from './components/dashboard/dashboard';
 import { PedidoFormComponent } from './components/pedido-form/pedido-form';
+import { WebsocketComponent } from './components/websocket/websocket';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DashboardComponent, PedidoFormComponent, CommonModule],
+  imports: [RouterOutlet, DashboardComponent, PedidoFormComponent, WebsocketComponent, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

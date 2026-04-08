@@ -1,0 +1,21 @@
+<div class="chat-wrapper">
+  <div class="chat-header">
+    <h3>💬 Chat de Cafetería</h3>
+    <span class="badge">{{ totalMensajes }} mensajes</span>
+  </div>
+  
+  <div class="mensajes-container">
+    <div *ngFor="let m of mensajes" 
+        [ngClass]="{'mi-mensaje': m.usuario === 'Aprendiz_SENA', 'otro-mensaje': m.usuario !== 'Aprendiz_SENA'}">
+      <div class="burbuja">
+        <small class="usuario">{{ m.usuario }}</small>
+        <p>{{ m.mensaje }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input [(ngModel)]="mensajeNuevo" (keyup.enter)="enviar()" placeholder="Escribe un mensaje...">
+    <button (click)="enviar()">Enviar</button>
+  </div>
+</div>

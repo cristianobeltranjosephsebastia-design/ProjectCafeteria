@@ -155,6 +155,14 @@ CORS_ALLOW_METHODS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
+    "http://127.0.0.1:4200",
 ]
 
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 # Arreglos en el archivo de configuración, como la adición de drf_spectacular para la documentación de la API y ajustes en las clases de autenticación y permisos.
