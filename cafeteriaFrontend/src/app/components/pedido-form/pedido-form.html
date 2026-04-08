@@ -1,0 +1,28 @@
+<div class="form-container">
+    <h2>Nuevo Pedido ☕</h2>
+    <form [formGroup]="pedidoForm" (ngSubmit)="enviarPedido()">
+        <div class="field">
+            <label>Nombre del Cliente:</label>
+            <input formControlName="cliente" placeholder="Ej: Juan Pérez">
+        </div>
+
+        <div class="field">
+            <label>Producto:</label>
+            <select formControlName="producto">
+                <option value="">Selecciona un café</option>
+                <option value="Espresso">Espresso</option>
+                <option value="Capuccino">Capuccino</option>
+                <option value="Latte">Latte</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Cantidad:</label>
+            <input type="number" formControlName="cantidad">
+        </div>
+
+        <button type="submit" [disabled]="pedidoForm.invalid">
+            Enviar Pedido
+        </button>
+    </form>
+</div>

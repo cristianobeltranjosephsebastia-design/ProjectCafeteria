@@ -1,0 +1,12 @@
+<div class="chat-container">
+    <div class="chat-window">
+        <div *ngFor="let msg of chatHistory" [ngClass]="msg.role">
+        <p>{{ msg.text }}</p>
+        </div>
+    </div>
+    
+    <div class="input-area">
+        <input [(ngModel)]="pregunta" placeholder="Pregúntale a la IA sobre los pedidos...">
+        <button (click)="preguntarIA()">Enviar</button>
+    </div>
+</div>

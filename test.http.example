@@ -56,6 +56,13 @@ Authorization: Bearer {{token}}
 DELETE {{hostname}}/api/pedidos/ID_DEL_PEDIDO_AQUI/
 Authorization: Bearer {{token}}
 
+
+
+###  Obtener Estadísticas de Pedidos
+GET {{hostname}}/api/pedidos/estadisticas/
+Authorization: Bearer {{token}}
+
+
 ### Subir foto de perfil
 POST {{hostname}}/api/perfil/foto/
 Authorization: Bearer {{token}}

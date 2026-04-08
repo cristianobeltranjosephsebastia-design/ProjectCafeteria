@@ -23,3 +23,8 @@ db.sqlite3
 .vscode/
 test.http
 avatar.jpeg
+
+
+# --- Angular ---
+/node_modules
+/.angular

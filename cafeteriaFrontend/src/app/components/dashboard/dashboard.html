@@ -1,0 +1,34 @@
+<div class="dashboard-container" *ngIf="stats">
+    <h2>Resumen de la Cafetería</h2>
+
+
+    <div class="stats-grid">
+        <div class="card">
+            <h3>Total Pedidos</h3>
+            <p class="value">{{ stats.total }}</p>
+        </div>
+
+        <div class="card warning">
+            <h3>Pendientes</h3>
+            <p class="value">{{ stats.pendientes }}</p>
+        </div>
+
+        <div class="card success">
+            <h3>Completados</h3>
+            <p class="value">{{ stats.completados }}</p>
+        </div>
+    </div>
+
+    <div class="progress-section">
+        <h3>Progreso de Entrega: {{ stats.porcentaje_completados }}%</h3>
+        <div class="progress-bar">
+            <div class="fill" [style.width.%]="stats.porcentaje_completados"></div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!stats" style="text-align: center; margin-top: 50px;">
+    <p>Esperando datos de la cafetería...</p>
+    <progress></progress>
+</div>
+

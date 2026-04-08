@@ -1,0 +1,7 @@
+:host {
+    display: block;
+    background-color: #ecddc3;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+}
